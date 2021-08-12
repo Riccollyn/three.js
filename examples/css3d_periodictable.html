@@ -243,13 +243,7 @@
 					const element = document.createElement( 'div' );
 					element.className = 'element';
 					
-					if ( element == "F"){
-					element.style.backgroundColor = 'rgba(255,20,147,' + ( Math.random() * 0.5 + 0.25 ) + ')';
-					}
 					
-					else{
-						element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')'
-					}
 						
 				
 
@@ -262,6 +256,14 @@
 					symbol.className = 'symbol';
 					symbol.textContent = table[ i ];
 					element.appendChild( symbol );
+					
+					if ( symbol == "F"){
+					element.style.backgroundColor = 'rgba(255,20,147,' + ( Math.random() * 0.5 + 0.25 ) + ')';
+					}
+					
+					else{
+						element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')'
+					}
 
 					const details = document.createElement( 'div' );
 					details.className = 'details';
