@@ -92,7 +92,7 @@
 		</div>
 
 		<script type="module">
-
+			var gender;
 			import * as THREE from '../build/three.module.js';
 
 			import { TWEEN } from './jsm/libs/tween.module.min.js';
@@ -243,12 +243,12 @@
 					const element = document.createElement( 'div' );
 					element.className = 'element';
 					
-					if(element.symbol == "F")
+					if(gender == "F")
 					{
 						element.style.backgroundColor = 'rgba(255,20,147,' + ( Math.random() * 0.5 + 0.25 ) + ')'
 					}
 					
-					else if(element.symbol == "M")
+					else if(gender == "M")
 					{
 					element.style.backgroundColor = 'rgba(0,127,127' + ( Math.random() * 0.5 + 0.25 ) + ')'
 					}
