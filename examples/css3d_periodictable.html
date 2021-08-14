@@ -116,9 +116,9 @@
 				"M", "Villyrian", "21", 15, 3,
 				"F", "Florence", "20", 16, 3,
 				"M", "Joel", "24", 17, 3,
-				"M", "Edmund", "23", 18, 3,
+				"M", "Edmund","23", 18, 3,
 				"F", "Vannessa", "26", 1, 4,
-				"F", "Veronica", "20", 2, 4,
+				"F", "Veronica", "20 ", 2, 4,
 				"M", "Marvin", "21", 3, 4,
 				"F", "Lynie", "21", 4, 4,
 				"F", "Haslinda", "24", 5, 4,
@@ -236,12 +236,15 @@
 				scene = new THREE.Scene();
 
 				// table
-
+				
 				for ( let i = 0; i < table.length; i += 5 ) {
-
+					
 					const element = document.createElement( 'div' );
 					element.className = 'element';
+					
+					if(table[i] == "M"){
 					element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')';
+					}
 					
 					const number = document.createElement( 'div' );
 					number.className = 'number';
