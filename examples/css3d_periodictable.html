@@ -89,7 +89,6 @@
 			<button id="sphere">SPHERE</button>
 			<button id="helix">HELIX</button>
 			<button id="grid">GRID</button>
-			<button id="cylinder">CYLINDER</button>
 		</div>
 
 		<script type="module">
@@ -224,7 +223,7 @@
 			let controls;
 
 			const objects = [];
-			const targets = { table: [], sphere: [], helix: [], grid: [], cylinder: [] };
+			const targets = { table: [], sphere: [], helix: [], grid: [] };
 
 			init();
 			animate();
@@ -340,7 +339,7 @@
 					targets.grid.push( object );
 
 				}
-				
+
 				//
 
 				renderer = new CSS3DRenderer();
@@ -348,15 +347,6 @@
 				document.getElementById( 'container' ).appendChild( renderer.domElement );
 
 				//
-				
-				// cylinder
-				
-				for ( let i = 0; i < objects.length; i ++ ) {
-				
-				
-				}
-
-				
 
 				controls = new TrackballControls( camera, renderer.domElement );
 				controls.minDistance = 500;
@@ -388,13 +378,6 @@
 				buttonGrid.addEventListener( 'click', function () {
 
 					transform( targets.grid, 2000 );
-
-				} );
-				
-				const buttonCylinder = document.getElementById( 'cylinder' );
-				buttonGrid.addEventListener( 'click', function () {
-
-					transform( targets.cylinder, 2000 );
 
 				} );
 
