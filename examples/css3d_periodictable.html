@@ -89,6 +89,7 @@
 			<button id="sphere">SPHERE</button>
 			<button id="helix">HELIX</button>
 			<button id="grid">GRID</button>
+			<button id="cylinder">CYLINDER</button>
 		</div>
 
 		<script type="module">
@@ -339,6 +340,33 @@
 					targets.grid.push( object );
 
 				}
+				
+				// cylinder
+				
+				var vector = new THREE.Vector3();
+				var lookAt = new THREE.Vector3();
+				var lookAtScale = new THREE.Vector3(1.1, 1, 1.1);
+				var itemH = 180;
+				var itemW = 140;
+				var itemsPerRound = 20;
+				var rounds = Math.ceil(table.length / 5 / itemsPerRound);
+				
+				console.log(table.length, rounds);
+				var sectorStep = Math.PI * 2 / itemsPerRound;
+				var mainRadius = 500;
+				for (let i = 0; i < table.length; i+=5){
+					let ii = i / 5;
+					let round = Math.floor (ii / itemsPerRound);
+					let sector = (ii % itemsPerRound) * sectorStep;
+					
+					let h = (itemH * round) - (itemH * (rounds * 0.5));
+					let object = new THREE.Object3D();
+					object.position.setFromCylindricalCoords(mainRadius, sector, h);
+					lookAt.copy(object.position);
+					lookAt.multiply(lookAtScale);
+					object.lookAt(lookAt);
+					targets.cylinder.push(object);
+				}
 
 				//
 
@@ -379,6 +407,13 @@
 
 					transform( targets.grid, 2000 );
 
+				} );
+				
+				const buttonGrid = document.getElementById( 'cylinder' );
+				buttonGrid.addEventListener( 'click', function (){
+					
+					transform( targets.grid, 2000 );
+					
 				} );
 
 				transform( targets.table, 2000 );
