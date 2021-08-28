@@ -343,17 +343,17 @@
 				
 				// cylinder
 				
-				var vector = new THREE.Vector3();
-				var lookAt = new THREE.Vector3();
-				var lookAtScale = new THREE.Vector3(1.1, 1, 1.1);
-				var itemH = 180;
-				var itemW = 140;
-				var itemsPerRound = 20;
-				var rounds = Math.ceil(table.length / 5 / itemsPerRound);
+				const vector = new THREE.Vector3();
+				const lookAt = new THREE.Vector3();
+				const lookAtScale = new THREE.Vector3(1.1, 1, 1.1);
+				const itemH = 180;
+				const itemW = 140;
+				const itemsPerRound = 20;
+				const rounds = Math.ceil(table.length / 5 / itemsPerRound);
 				
 				console.log(table.length, rounds);
-				var sectorStep = Math.PI * 2 / itemsPerRound;
-				var mainRadius = 500;
+				const sectorStep = Math.PI * 2 / itemsPerRound;
+				const mainRadius = 500;
 				for (let i = 0; i < table.length; i+=5){
 					let ii = i / 5;
 					let round = Math.floor (ii / itemsPerRound);
