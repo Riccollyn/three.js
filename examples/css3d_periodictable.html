@@ -354,16 +354,20 @@
 				const sectorStep = Math.PI * 2 / itemsPerRound;
 				const mainRadius = 500;
 				for (let i = 0; i < table.length; i+=5){
-					let ii = i / 5;
-					let round = Math.floor (ii / itemsPerRound);
-					let sector = (ii % itemsPerRound) * sectorStep;
 					
-					let h = (itemH * round) - (itemH * (rounds * 0.5));
-					let object = new THREE.Object3D();
-					object.position.setFromCylindricalCoords(mainRadius, sector, h);
-					lookAt.copy(object.position);
-					lookAt.multiply(lookAtScale);
-					object.lookAt(lookAt);
+					var table = new THREE.Object3D();
+					const theta = -i * 1.76 + (Math.PI/2);
+					const y = -(i * 8) + 500;
+					
+					object.position.setFromCylindricalCoords(500, theta, y);
+					var vector = new THREE.Vector3();
+					
+					vector.x = object.position.x * 2;
+					vector.y = object.position.y;
+					vector.z = object.position.z * 2;
+					
+					object.lookAt(vector);
+					
 					targets.cylinder.push(object);
 				}
 
